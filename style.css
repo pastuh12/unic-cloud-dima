@@ -1,0 +1,27 @@
+.dashboard{
+    max-width: 450px;
+    min-width: 400px;
+    padding: 10px;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+header{
+    padding: 20px;
+}
+
+button{
+    height: 40px;
+}
+
+section{
+    border-radius: 5%;
+}
+
+#save{
+    height: 35px;
+}
+
+.old{
+    background-color: bisque;
+}
