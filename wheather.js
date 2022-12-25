@@ -1,12 +1,3 @@
-// const countryTag = document.getElementById("country");
-// const cityTag = document.getElementById("city");
-// const dateUpdateTag = document.getElementById("time");
-// const wheatherIcon = document.getElementById("wheather-icon");
-// const tempreture = document.getElementById("temp_c");
-// const wheatherName = document.getElementById("wheather-name");
-// const feelingTemp = document.getElementById("feeling-temp");
-// const wingSpeed = document.getElementById("wing-speed");
-// const humidity = document.getElementById("humidity");
 const addBtn = document.getElementById("addDb");
 const inputCity = document.getElementById("choose-city")
 const main = document.getElementById("main");
@@ -67,7 +58,11 @@ const addDashBoard = function (content) {
 
 const httpGet = function (theUrl, value) {
     let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", theUrl + `?city=${value}`, false); // false for synchronous request
+    if(value){
+        xmlHttp.open("GET", theUrl + `?location=${value}`, false); 
+    } else {
+        xmlHttp.open("GET");
+    }
     xmlHttp.send(null);
     return xmlHttp.responseText;
 };
@@ -82,13 +77,14 @@ const httpPost = function (theUrl) {
     })
         .then((res) => res.json())
         .then((json) => {
+            console.log(json);
             datab = json;
             updateHistory(json);
         });
 };
 
 const getWheather = function (value) {
-    const url = "https://functions.yandexcloud.net/d4eig7qi5jeiceud3em7";
+    const url = "https://functions.yandexcloud.net/d4eeumslir2vnb8hg4jo";
 
     content = JSON.parse(httpGet(url, value));
     datab = content;
@@ -176,7 +172,6 @@ const getCountForWeek = function(theUrl = "http://localhost:3000/count"){
     })
         .then((res) => res.json())
         .then((json) => {
-            console.log(json)
             updateCount(json);
         });
 }
@@ -190,3 +185,4 @@ historyBtn.onclick = () => {
 };
 
 getCountForWeek();
+updateHistory(datab);
