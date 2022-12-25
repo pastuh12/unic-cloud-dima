@@ -21,7 +21,7 @@ const addDashBoard = function (content) {
                     <span id="temp_c">${content.current.temp_c}</span>
                 </div>
                 <div>
-                    <img id="wheather-icon" src="${content.current.condition.icon}" alt="wheather" />
+                    <img id="wheather-icon" src="https:${content.current.condition.icon}" alt="wheather" />
                 </div>
                 <div class="d-flex flex-column">
                     <div>
@@ -123,7 +123,7 @@ const wheatherFromHistory = function () {
                     <span id="temp_c">${content.current.temp_c}</span>
                 </div>
                 <div>
-                    <img id="wheather-icon" src="${content.current.condition.icon}" alt="wheather" />
+                    <img id="wheather-icon" src="https:${content.current.condition.icon}" alt="wheather" />
                 </div>
                 <div class="d-flex flex-column">
                     <div>
