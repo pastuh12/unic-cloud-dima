@@ -18,7 +18,7 @@ const addDashBoard = function (content) {
         <div class="d-flex flex-column">
             <div class="d-flex flex-row">
                 <div class="d-flex align-items-center">
-                    <span id="temp_c">${content.current.temp_c}</span>
+                    <span id="temp_c">C<sup>o</sup>${content.current.temp_c}</span>
                 </div>
                 <div>
                     <img id="wheather-icon" src="https:${content.current.condition.icon}" alt="wheather" />
@@ -28,16 +28,16 @@ const addDashBoard = function (content) {
                         <span id="wheather-name">${content.current.condition.text}</span>
                     </div>
                     <div>
-                        <span id="feeling-temp">${content.current.feelslike_c}</span>
+                        <span id="feeling-temp">По ощущениям ${content.current.feelslike_c}</span>
                     </div>
                 </div>
             </div>
             <div class="d-flex flex-row justify-content-between mb-2">
                 <div>
-                    <span id="wing-speed">${content.current.wind_mph}</span>
+                    <span id="wing-speed">Ветер км/ч ${content.current.wind_mph}</span>
                 </div>
                 <div>
-                    <span id="humidity">${content.current.humidity}</span>
+                    <span id="humidity">Влажность ${content.current.humidity}</span>
                 </div>
                 <div>
                     <span></span>
